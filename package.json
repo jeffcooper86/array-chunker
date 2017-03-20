@@ -1,10 +1,10 @@
 {
   "name": "array-chunk",
   "version": "1.0.0",
-  "description": "Evenly distributes array values into an array of x new arrays.",
+  "description": "Evenly distributes array values into an array of n new arrays.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/jecoopr/arrayChunk/issues"
   },
-  "homepage": "https://github.com/jecoopr/arrayChunk#readme"
+  "homepage": "https://github.com/jecoopr/arrayChunk#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
 }
