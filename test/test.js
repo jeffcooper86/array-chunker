@@ -1,6 +1,9 @@
 const assert = require('chai').assert;
 const arrayChunk = require('../index.js');
 
+var arr = [0, 1, 2, 3, 4, 5, 6, 7],
+  arrChunk2 = [[0, 1, 2, 3], [4, 5, 6, 7]];
+
 describe('arrayChunk()', function() {
 
   describe('Default Params', function() {
@@ -9,36 +12,45 @@ describe('arrayChunk()', function() {
     });
 
     it('should default n to 2 if n is not passed', function() {
-      assert.deepEqual(arrayChunk([1, 2]), [[1], [2]]);
+      assert.deepEqual(arrayChunk(arr), arrChunk2);
     });
+
+    it ('should default n to 2 if n is not a positive integer', function() {
+      assert.deepEqual(arrayChunk(arr, -4), arrChunk2);
+      assert.deepEqual(arrayChunk(arr, 3.4), arrChunk2);
+    })
   });
 
   describe('Evenly dispersed', function() {
+    it('should return n empty arrays if an empty array is passed', function() {
+      assert.deepEqual(arrayChunk([], 1), [[]]);
+      assert.deepEqual(arrayChunk([]), [[], []]);
+      assert.deepEqual(arrayChunk([], 3), [[], [], []]);
+    });
+
     it('should work if array.length < n', function() {
       assert.deepEqual(
-        arrayChunk([1, 2], 5),
-        [[1], [2], [], [], []]
+        arrayChunk(arr, 10),
+        [[0], [1], [2], [3], [4], [5], [6], [7], [], []]
       );
     });
 
-    it('should evenly split an array of 8 into 2 of 4', function() {
+    it('should evenly split even chunks', function() {
       assert.deepEqual(
-        arrayChunk(Array(8).fill(1)),
-        [[1, 1, 1, 1], [1, 1, 1, 1]]
+        arrayChunk(arr, 4),
+        [[0, 1], [2, 3], [4, 5], [6, 7]]
       );
     });
 
-    it('should evenly disperse an array of 8 into 3 arrays', function() {
+    it('should evenly disperse uneven chunks', function() {
       assert.deepEqual(
-        arrayChunk(Array(8).fill(1), 3),
-        [[1, 1, 1], [1, 1, 1], [1, 1]]
+        arrayChunk(arr, 3),
+        [[0, 1, 2], [3, 4, 5], [6, 7]]
       );
-    });
 
-    it('should evenly disperse an array of 21 into 4 arrays', function() {
       assert.deepEqual(
-        arrayChunk(Array(21).fill(1), 5),
-        [[1, 1, 1, 1, 1,], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]]
+        arrayChunk(arr, 5),
+        [[0, 1], [2, 3], [4, 5], [6], [7]]
       );
     });
   });
