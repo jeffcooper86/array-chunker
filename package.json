@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jecoopr/arrayChunk.git"
+    "url": "git+https://github.com/jecoopr/array-chunker.git"
   },
   "keywords": [
     "array",
@@ -22,9 +22,9 @@
   ],
   "author": "Jeff Cooper (jecoopr)",
   "bugs": {
-    "url": "https://github.com/jecoopr/arrayChunk/issues"
+    "url": "https://github.com/jecoopr/array-chunker/issues"
   },
-  "homepage": "https://github.com/jecoopr/arrayChunk#readme",
+  "homepage": "https://github.com/jecoopr/array-chunker#readme",
   "dependencies": {},
   "devDependencies": {
     "chai": "^3.5.0",
