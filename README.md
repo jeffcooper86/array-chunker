@@ -58,7 +58,7 @@ arrayChunk();
 <a name="docs"></a>
 ## Docs
 
-### arrayChunk(data, n) ⇒ <code>Array</code>
+arrayChunk(data, n) ⇒ <code>Array</code>
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
