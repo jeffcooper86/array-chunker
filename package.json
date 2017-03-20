@@ -1,5 +1,6 @@
 {
   "name": "array-chunk",
+  "license": "MIT",
   "version": "1.0.0",
   "description": "Evenly distributes array values into an array of n new arrays.",
   "main": "index.js",
@@ -11,12 +12,13 @@
     "url": "git+https://github.com/jecoopr/arrayChunk.git"
   },
   "keywords": [
-    "['array'",
-    "'chunk'",
-    "'split'",
-    "'divide'",
-    "'evenly",
-    "distributed']"
+    "array",
+    "chunk",
+    "group",
+    "split",
+    "divide",
+    "evenly",
+    "distributed"
   ],
   "author": "Jeff Cooper (jecoopr)",
   "license": "ISC",
