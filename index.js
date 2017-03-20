@@ -1,6 +1,13 @@
-module.exports.arrayChunk = arrayChunk;
+module.exports = arrayChunk;
+
+/**
+ * Evenly distributes array values into an array of n arrays.
+ * @param {array} data
+ * @param {int} n The number of new arrays.
+ */
 
 function arrayChunk(data, n) {
+  if (!data) return [];
   var newD = [],
     l = data.length,
     chunk,
@@ -14,14 +21,12 @@ function arrayChunk(data, n) {
   for (var chunkI = 0; chunkI < n; chunkI += 1) {
     newD.push([]);
 
-    // Reduce the chunk amount by one after chunking all the left overs.
+    // Reduce the chunk amount by one after chunking all the extras.
     if (chunkI === n - ((chunk * n) - l)) chunk -= 1;
 
     // Add to the chunks.
-    for (var i = 0; i < chunk; i += 1) {
-      chunked += 1;
-      newD[chunkI][i] = data[chunked - 1];
-    }
+    newD[chunkI] = newD[chunkI].concat(data.slice(chunked, chunked + chunk));
+    chunked += chunk;
   }
   return newD;
 }
