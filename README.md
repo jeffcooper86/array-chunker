@@ -1,4 +1,4 @@
-# arrayChunk
+# array-chunker
 Evenly distributes array values into an array of n arrays.
 
 - [Docs](#docs)
@@ -6,11 +6,10 @@ Evenly distributes array values into an array of n arrays.
 ## Usage
 
 ```javascript
-var arr = [0, 1, 2, 3, 4, 5, 6, 7];
-```
+const arrayChunk = require('array-chunker');
+const arr = [0, 1, 2, 3, 4, 5, 6, 7];
 
-```javascript
-arrayChunk(arr);
+arrayChunk(arr)
 => [[0, 1, 2, 3], [4, 5, 6, 7]]
 
 arrayChunk(arr, 4);
@@ -58,6 +57,7 @@ arrayChunk();
 
 <a name="docs"></a>
 ## Docs
+
 ### arrayChunk(data, n) ⇒ <code>Array</code>
 
 | Param | Type | Default | Description |
