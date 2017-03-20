@@ -1,7 +1,7 @@
 {
-  "name": "array-chunk",
-  "license": "MIT",
-  "version": "1.0.0",
+  "name": "array-chunker",
+  "license": "ISC",
+  "version": "0.2.0",
   "description": "Evenly distributes array values into an array of n new arrays.",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,6 @@
     "distributed"
   ],
   "author": "Jeff Cooper (jecoopr)",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/jecoopr/arrayChunk/issues"
   },
